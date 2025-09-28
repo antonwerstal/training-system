@@ -1,0 +1,55 @@
+# local settings for datasource
+server/*.local.json
+server/*.local.js
+client/*.local.js
+
+# storage
+storage
+
+# dependencies
+node_modules
+package-lock.json
+
+# testing
+coverage
+vite-template
+
+# production
+build
+
+# logs
+/logs
+
+# vscode settings
+.vscode
+
+# misc
+.DS_Store
+.env
+.idea
+.project
+.strong-pm
+npm-debug.log
+
+# other
+marmelab
+_*
+
+# files
+*.dat
+*.iml
+*.log
+*.out
+*.pid
+*.seed
+*.sublime-*
+*.swo
+*.swp
+*.tgz
+
+# Million Lint
+.million
+
+# IDEA temp files
+*.*~
+.cursor

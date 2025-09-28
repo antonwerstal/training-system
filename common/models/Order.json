@@ -1,0 +1,83 @@
+{
+	"name": "Order",
+	"description": "Заказ",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"mixins": {},
+	"scope": {
+		"order": "priority DESC"
+	},
+	"properties": {
+		"name": {
+			"type": "String",
+			"required": false,
+			"index": true,
+			"description": "Название заказа"
+		},
+		"total": {
+			"type": "Number",
+			"required": false,
+			"index": true,
+			"description": "Сумма заказа",
+			"default": 0,
+			"postgresql": {
+				"dataType": "NUMERIC"
+			}
+		},
+		"comment": {
+			"type": "String",
+			"required": false,
+			"index": true,
+			"description": "Комментарий к заказу"
+		},
+		"closed": {
+			"type": "Boolean",
+			"required": false,
+			"index": true,
+			"description": "Закрыта ли заказ",
+			"default": false
+		},
+		"closedAt": {
+			"type": "Date",
+			"index": true
+		},
+		"paid": {
+			"type": "Boolean",
+			"required": false,
+			"index": true,
+			"description": "Оплачен ли заказ",
+			"default": false
+		},
+		"dueDate": {
+			"type": "Date",
+			"required": false,
+			"index": true,
+			"description": "Дата закрытия заказа"
+		},
+		"startDate": {
+			"type": "Date",
+			"required": false,
+			"index": true,
+			"description": "Дата начала заказа"
+		},
+		"private": {
+			"type": "Boolean",
+			"index": true,
+			"description": "Признак приватности заказа",
+			"default": false
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "$everyone",
+			"permission": "ALLOW"
+		}
+	],
+	"methods": {}
+}

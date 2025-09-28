@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "postgres": {
+    "name": "postgres",
+		"connector": "postgresql",
+		"port": 5432,
+		"database": "pet_calendar",
+		"password": "postgres",
+		"user": "postgres",
+		"maxDepthOfQuery": 50,
+		"maxOfflineRequests": 100
+  }
+}
