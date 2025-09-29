@@ -12,10 +12,5 @@
       "../common/mixins",
       "./mixins"
     ]
-  },
-  "Order": {
-		"dataSource": "postgres",
-		"public": true,
-		"strict": false
-	}
+  }
 }

@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const clientPath = path.resolve(__dirname, 'client');
 const distPath = path.resolve(__dirname, 'build');
@@ -20,7 +21,7 @@ module.exports = {
   cache: true,
   devtool: 'eval-cheap-module-source-map',
   performance: { hints: false },
-  entry: path.join(clientPath, 'index.js'),
+  entry: path.join(clientPath, 'index.tsx'),
   output: {
     filename: 'js/[name].js',
     path: distPath,
@@ -39,7 +40,7 @@ module.exports = {
     },
     modules: [path.resolve(__dirname, 'node_modules'), 'node_modules'],
     symlinks: true,
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   devServer: {
     devMiddleware: {
@@ -76,7 +77,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.[jt]sx?$/,
         include: [clientPath],
         use: {
           loader: 'babel-loader',
@@ -86,6 +87,7 @@ module.exports = {
             presets: [
               ['@babel/preset-env', { targets: { browsers: ['last 2 versions'] } }],
               ['@babel/preset-react', { runtime: 'automatic' }],
+              ['@babel/preset-typescript', { allowDeclareFields: true }]
             ],
             plugins: [
               ['@babel/plugin-proposal-decorators', { legacy: true }],
@@ -136,5 +138,6 @@ module.exports = {
       },
       PRODUCTION: JSON.stringify(false),
     }),
+    new ForkTsCheckerWebpackPlugin()
   ],
 };

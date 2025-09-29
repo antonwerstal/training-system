@@ -1,4 +1,4 @@
-# RecordsCalendar - Инструкция по запуску
+# Training System - Инструкция по запуску
 
 ## Быстрый старт
 
@@ -15,7 +15,7 @@
    - Установите PostgreSQL
    - Создайте базу данных для проекта:
      ```sql
-     CREATE DATABASE pet_calendar;
+     CREATE DATABASE pet_training;
      ```
    - Настройте подключение в `server/datasources.json` или `server/datasources.local.js`
    
@@ -25,7 +25,7 @@
      "postgres": {
        "host": "localhost",
        "port": 5432,
-       "database": "pet_calendar",
+       "database": "pet_training",
        "username": "your_username",
        "password": "your_password",
        "connector": "postgresql"
@@ -59,7 +59,7 @@
 ### Ошибка подключения к PostgreSQL
 **Решение:** 
 - Проверьте, что PostgreSQL запущен
-- Убедитесь, что база данных `records_calendar` создана
+- Убедитесь, что база данных `pet_training` создана
 - Проверьте настройки в `server/datasources.json`
 
 **Типичные ошибки:**

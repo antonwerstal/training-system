@@ -7,7 +7,7 @@
     "name": "postgres",
 		"connector": "postgresql",
 		"port": 5432,
-		"database": "pet_calendar",
+		"database": "pet_training",
 		"password": "postgres",
 		"user": "postgres",
 		"maxDepthOfQuery": 50,

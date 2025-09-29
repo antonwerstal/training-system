@@ -9,11 +9,9 @@ export class App extends React.Component {
     return (
       <Theme preset={presetGpnDefault}>
         <div style={{ padding: 'var(--space-xl)' }}>
-          <Text size="2xl" weight="bold">
-            RecordsCalendar
-          </Text>
+          <Text size="2xl" weight="bold">PetProject</Text>
           <Text size="m" view="secondary" style={{ marginTop: 'var(--space-xs)' }}>
-            Будет виджет календаря с карточками записей
+            Система тренировок
           </Text>
         </div>
       </Theme>

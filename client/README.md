@@ -1,4 +1,4 @@
-# RecordsCalendar Client
+# Training system Client
 
 React клиент для виджета календаря с карточками записей.
 
